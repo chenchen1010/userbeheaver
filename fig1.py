@@ -72,7 +72,9 @@ for label in ax.xaxis.get_ticklabels()[::1]:
     label.set_visible(False)
 for label in ax.xaxis.get_ticklabels()[::5]:
     label.set_visible(True)
-
+plt.xlabel(U'时刻')
+plt.ylabel(u'家庭负荷值（W）')
+plt.title(u'某地区年度家庭负荷总量时刻分布')
 # ax.tick_params(labeltop={'off','on','off','off','off'})
 
 # ax.xaixs.setmajor_locater(df_day.index[0::2])
@@ -113,7 +115,9 @@ for label in ax.xaxis.get_ticklabels()[::1]:
     label.set_visible(False)
 for label in ax.xaxis.get_ticklabels()[::5]:
     label.set_visible(True)
-
+plt.xlabel(U'时刻')
+plt.ylabel(u'家庭负荷值（W）')
+plt.title(u'某地区年度家庭负荷总量时刻分布')
 plt.xticks(rotation=90)
 # plt.show()
 
@@ -128,6 +132,9 @@ print(df_copy.groupby(df_copy.index).sum())
 fig,ax = plt.subplots()
 ax.plot(df_week.index,df_week['sum'])
 plt.xticks([0,1,2,3,4,5,6], ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'])
+plt.xlabel(u'星期')
+plt.ylabel(u'家庭负荷值（W）')
+plt.title(u'某地区年度家庭负荷总量星期分布')
 # plt.xticks(rotation=270)
 plt.show()
 

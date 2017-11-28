@@ -107,7 +107,7 @@ for x in range(0,365):
 
 # the histogram of the data
 fig, ax = plt.subplots()
-plt.bar(df_number_day.index, df_number_day['sum'])
+plt.bar(df_number_day.index, df_number_day['sum']/365)
 
 for label in ax.xaxis.get_ticklabels()[::1]:
     label.set_visible(False)
