@@ -28,3 +28,14 @@ mpl.rcParams['font.serif'] = ['SimHei']
 import seaborn as sns
 sns.set_style("darkgrid",{"font.sans-serif":['simhei', 'Arial']})
 See more about seaborn.set or seaborn.set_style.
+
+#将下周坐标标注和文本稀疏显示
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::4]:
+    label.set_visible(True)
+
+#设定图标题x轴y轴坐标
+plt.xlabel(U'时刻')
+plt.ylabel(u'充电车数')
+plt.title(u'某地区一年每天充电车数量')

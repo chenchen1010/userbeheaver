@@ -45,6 +45,12 @@ for x in range(0,365):
 fig,ax = plt.subplots()
 ax.plot(df_day.index,df_day['sum'])
 plt.xticks(df_day.index,rotation=90)
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::5]:
+    label.set_visible(True)
+
+
 
 #分为四个季度四条曲线
 df_day['1_sum'] = 0.0
@@ -73,7 +79,10 @@ ax.plot(df_day.index, df_day['3_sum'], 'k', label='summer')
 ax.plot(df_day.index, df_day['4_sum'], 'r:', label='fall')
 
 legend = ax.legend(loc='upper left', fontsize='x-large')
-
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::5]:
+    label.set_visible(True)
 plt.xticks(rotation=90)
 
 
@@ -99,6 +108,11 @@ for x in range(0,365):
 # the histogram of the data
 fig, ax = plt.subplots()
 plt.bar(df_number_day.index, df_number_day['sum'])
+
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::5]:
+    label.set_visible(True)
 
 plt.xlabel(U'时刻')
 plt.ylabel(u'充电车数')

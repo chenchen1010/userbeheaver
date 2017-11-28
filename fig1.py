@@ -67,8 +67,14 @@ for x in range(0,365):
 fig,ax = plt.subplots()
 ax.plot(df_day.index,df_day['sum'])
 plt.xticks(df_day.index,rotation=90)
-myLocator = mticker.MultipleLocator(4)
-ax.xaxis.set_major_locator(myLocator)
+
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::5]:
+    label.set_visible(True)
+
+# ax.tick_params(labeltop={'off','on','off','off','off'})
+
 # ax.xaixs.setmajor_locater(df_day.index[0::2])
 # ax.set_xticks([])
 # ax.set_xlables([])
@@ -103,12 +109,15 @@ ax.plot(df_day.index, df_day['3_sum'], 'k', label='summer')
 ax.plot(df_day.index, df_day['4_sum'], 'r:', label='fall')
 
 legend = ax.legend(loc='upper left', fontsize='x-large')
+for label in ax.xaxis.get_ticklabels()[::1]:
+    label.set_visible(False)
+for label in ax.xaxis.get_ticklabels()[::5]:
+    label.set_visible(True)
 
 plt.xticks(rotation=90)
 # plt.show()
-#
-#时间轴直接为一周的每一个时刻
 
+#  #时间轴直接为一周的每一个时刻
 df_copy = df
 print(df_copy.index.dayofweek[:200])
 df_copy.index = df_copy.index.dayofweek
